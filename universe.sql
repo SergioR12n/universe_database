@@ -51,7 +51,8 @@ CREATE TABLE public.black_holes (
     black_holes_id integer NOT NULL,
     name character varying(60) NOT NULL,
     distance_from_earth numeric NOT NULL,
-    galaxy_id integer NOT NULL
+    galaxy_id integer NOT NULL,
+    age_in_million_of_years integer
 );
 
 
@@ -268,6 +269,12 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: black_holes; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.black_holes VALUES (1, 'Sagitario A', 2000, 1, 1000);
+INSERT INTO public.black_holes VALUES (2, 'M87*', 53000, 2, 6500);
+INSERT INTO public.black_holes VALUES (3, 'TON 618', 1040000, 3, 8500);
+INSERT INTO public.black_holes VALUES (4, 'NGC 1277', 220000, 4, 13000);
+INSERT INTO public.black_holes VALUES (5, 'Cygnus X-1', 6070, 5, 100);
+INSERT INTO public.black_holes VALUES (6, 'Centaurus A*', 11000, 6, 12000);
 
 
 --
@@ -343,7 +350,7 @@ INSERT INTO public.star VALUES (6, 'Carina 1', 6, 300, 300000);
 -- Name: black_holes_black_holes_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.black_holes_black_holes_id_seq', 1, false);
+SELECT pg_catalog.setval('public.black_holes_black_holes_id_seq', 6, true);
 
 
 --
